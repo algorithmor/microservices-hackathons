@@ -159,8 +159,9 @@ In this example we will be changing `GotQuotes` port and, therefore, configure `
 > **Note**: The code is commented for simpliciy, but could be configured to be running for the both services in the same machine, only the ports must be specified for each module.
 
 - In *GotQuotes'* `AppServer.java` code, change the `DEFAULT_PORT` to `8081`.
+- In *GotQuotes'* `eureka-client.properties` file, change the `eureka.port` to `8081`  
 - In *TopQuotes'* `AppServer.properties` file, comment the following property line:
- - `got-quotes-service-client.ribbon.NIWSServerListClassName`
+  `got-quotes-service-client.ribbon.NIWSServerListClassName`
 
 ```
 # If uncommented, the service discovery Eureka will be used.
@@ -173,6 +174,7 @@ In this example we will be changing `GotQuotes` port and, therefore, configure `
 ```
 # Initial list of servers, can be changed via Archaius dynamic property at runtime
 got-quotes-service-client.ribbon.listOfServers=localhost:8081
+# note the 8081 here is the defined previously in the GotQuotes' eureka-client.properties file
 ```
 
 Once everything is set up, we can launch both services using the following command for each one:
@@ -282,6 +284,18 @@ static final int DEFAULT_PORT = 8081;
 ```
 
 ### How to run it in AWS
+
+**Important note**: before running the previous modified code in AWS, please you have to change the ports and set them all to the `8080` or the `5000` (the only available from AWS security groups configurations).
+
+- *GotQuotes'* `AppServer.java` code, change the `DEFAULT_PORT` to `8080`
+- *GotQuotes'* `eureka-client.properties` file, change the `eureka.port` to `8080`  
+- *GotQuotes'* `eureka-client.properties` file, update the `eureka.vipAddress` to contain your team_id to avoid clashes (`GOT_QUOTES_TEAM_X`)
+
+- *TopQuotes'* `AppServer.java` code, change the `DEFAULT_PORT` to `8080`
+- *TopQuotes'* `eureka-client.properties` file, change the `eureka.port` to `8080`  
+- *TopQuotes'* `eureka-client.properties` file, update the `eureka.vipAddress` to contain your team_id to avoid clashes (`TOP_QUOTES_TEAM_X`)
+
+
 
 Our server in charge of building AWS images, will deploy directly to Amazon without any interaction.  
 In case you want to do it manually, we use **Asgard**, and can be found [here](http://asgard.hackathon.schibsted.io/).
