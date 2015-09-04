@@ -1,0 +1,9 @@
+[submodule "got-quotes-microservice-python"]
+	path = got-quotes-microservice-python
+	url = git@github.com:NetflixMicroservices/got-quotes-microservice-python.git
+[submodule "top-quotes-microservice-java"]
+	path = top-quotes-microservice-java
+	url = git@github.com:NetflixMicroservices/top-quotes-microservice-java.git
+[submodule "got-quotes-microservice-java"]
+	path = got-quotes-microservice-java
+	url = git@github.com:NetflixMicroservices/got-quotes-microservice-java.git
