@@ -7,3 +7,6 @@
 [submodule "got-quotes-microservice-java"]
 	path = got-quotes-microservice-java
 	url = git@github.com:NetflixMicroservices/got-quotes-microservice-java.git
+[submodule "got-quotes-microservice-go"]
+	path = got-quotes-microservice-go
+	url = git@github.com:NetflixMicroservices/got-quotes-microservice-go.git

@@ -281,10 +281,9 @@ static final int DEFAULT_PORT = 8081;
 ...
 ```
 
-### How to run it in AWS with
+### How to run it in AWS
 
-XXXXX XXXXX XXXXXXXXXX XXXXX XXXXXXXXXX XXXXX XXXXXXXXXX XXXXX XXXXX  
-XXXXX XXXXX XXXXXXXXXX XXXXX XXXXXXXXXX XXXXX XXXXXXXXXX XXXXX XXXXX  
-Execute autodeploy script????
+Our server in charge of building AWS images, will deploy directly to Amazon without any interaction.  
+In case you want to do it manually, we use **Asgard**, and can be found [here](http://asgard.hackathon.schibsted.io/).
 
 
